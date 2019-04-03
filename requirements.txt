@@ -1,0 +1,19 @@
+# packages in environment at D:\Python\Anaconda3\envs\lesson-planner:
+#
+# Name                    Version                   Build  Channel
+ca-certificates           2019.3.9             hecc5488_0    conda-forge
+certifi                   2019.3.9                 py37_0    conda-forge
+django                    2.2                      py37_0    conda-forge
+django-environ            0.4.5                      py_1    conda-forge
+openssl                   1.1.1b               hfa6e2cd_2    conda-forge
+pip                       19.0.3                   py37_0    conda-forge
+python                    3.7.3                hb12ca83_0    conda-forge
+pytz                      2018.9                     py_0    conda-forge
+setuptools                40.8.0                   py37_0    conda-forge
+six                       1.12.0                py37_1000    conda-forge
+sqlite                    3.26.0            hfa6e2cd_1001    conda-forge
+sqlparse                  0.3.0                      py_0    conda-forge
+vc                        14                            0    conda-forge
+vs2015_runtime            14.0.25420                    0    conda-forge
+wheel                     0.33.1                   py37_0    conda-forge
+wincertstore              0.2                   py37_1002    conda-forge

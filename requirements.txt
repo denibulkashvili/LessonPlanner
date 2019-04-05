@@ -3,6 +3,7 @@
 # Name                    Version                   Build  Channel
 ca-certificates           2019.3.9             hecc5488_0    conda-forge
 certifi                   2019.3.9                 py37_0    conda-forge
+coverage                  4.5.3            py37hfa6e2cd_0    conda-forge
 django                    2.2                      py37_0    conda-forge
 django-environ            0.4.5                      py_1    conda-forge
 openssl                   1.1.1b               hfa6e2cd_2    conda-forge

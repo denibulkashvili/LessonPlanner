@@ -26,7 +26,7 @@ class LessonPlansApp(LiveServerTestCase):
         self.clothes_lesson = Lesson.objects.create(title='Clothes lesson')
         self.clothes_lesson.tags.add(self.kindergarten_tag)
 
-    def test_user__when_click_tag_can_see_related_lessons(self):
+    def test_user_when_click_tag_can_see_related_lessons(self):
         # visit the /lessons url
         self.selenium.get(f'{self.live_server_url}/lessons/')
         # find tags on page

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% block title %}<title>Lesson Planner</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Add additional CSS in static file -->
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+  <div class="sidebar">
+    {% block sidebar %}
+      <ul>
+        <li><a href="{% url 'index' %}">Home</a></li>
+        <li><a href="{% url 'lesson_list' %}">Lessons</a></li>
+        <li><a href="{% url 'tag_list' %}">Tags</a></li>
+      </ul>
+    {% endblock %}
+  </div>
+  <div class="container">
+    {% block content %}{% endblock %}
+  </div>
+</body>
+</html>

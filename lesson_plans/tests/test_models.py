@@ -27,10 +27,10 @@ class LessonTestCase(TestCase):
         expected_object_name = lesson.title
         self.assertEquals(expected_object_name, str(lesson))
 
-    # def test_get_absolute_url(self):
-    #     lesson = Lesson.objects.get(id=1)
-    #     # This will also fail if the urlconf is not defined.
-    #     self.assertEquals(lesson.get_absolute_url(), 'lesson/1')
+    def test_get_absolute_url(self):
+        lesson = Lesson.objects.get(id=1)
+        # This will also fail if the urlconf is not defined.
+        self.assertEquals(lesson.get_absolute_url(), '/lesson/1')
 
 class TagTestCase(TestCase):
     @classmethod

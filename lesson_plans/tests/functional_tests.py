@@ -20,23 +20,25 @@ class LessonPlansApp(LiveServerTestCase):
         """Populates the database"""
         self.animals_lesson = Lesson.objects.create(title='Animals lesson')
         self.animals_tag = Tag.objects.create(name='animals')
-        self.kindergarten_tag = Tag.objects.create(name='kindergarten')
         self.animals_lesson.tags.add(self.animals_tag)
-        self.animals_lesson.tags.add(self.kindergarten_tag)
-        self.clothes_lesson = Lesson.objects.create(title='Clothes lesson')
-        self.clothes_lesson.tags.add(self.kindergarten_tag)
+        self.zoo_lesson = Lesson.objects.create(title='Zoo lesson')
+        self.zoo_lesson.tags.add(self.animals_tag)
 
     def test_user_when_click_tag_can_see_related_lessons(self):
         # visit the /lessons url
         self.selenium.get(f'{self.live_server_url}/lessons/')
+        # find the lesson on page
+        lesson = self.selenium.find_element_by_partial_link_text('Animals')
+        # click the lesson
+        lesson.click()
         # find tags on page
         tag = self.selenium.find_element_by_partial_link_text('animals')
-        # click the 1st tag
         first_tag_text = tag.text
+        # click the 1st tag
         tag.click()
         # check that url matches /tag/{tag_name}
-        self.assertEqual(f'{self.live_server_url}/tag/{first_tag_text}', self.selenium.current_url)
+        self.assertEqual(f'{self.live_server_url}/tag/{first_tag_text}/', self.selenium.current_url)
         # check that page containes related lessons
         titles = self.selenium.find_elements_by_tag_name('h2')
-        self.assertEqual(self.animals_lesson.title, titles[0].text)
-        self.assertEqual(self.clothes_lesson.title, titles[1].text)
+        self.assertEqual(self.zoo_lesson.title, titles[0].text)
+        self.assertEqual(self.animals_lesson.title, titles[1].text)

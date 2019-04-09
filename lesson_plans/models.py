@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.utils.text import slugify
 
 # Create your models here.
 class Lesson(models.Model):
@@ -37,6 +38,11 @@ class Tag(models.Model):
         max_length=20,
         verbose_name='tag name',
     )
+    slug = models.SlugField()
+
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name)
+        super(Tag, self).save(*args, **kwargs)
 
     class Meta:
         verbose_name = 'tag'

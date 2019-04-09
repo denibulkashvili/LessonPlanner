@@ -18,8 +18,13 @@ class LessonListView(ListView):
 
 class LessonDetailView(DetailView):
     model = Lesson
-    context_object_name = 'lesson_detail'
+    context_object_name = 'lesson'
     template_name = 'lesson_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(LessonDetailView, self).get_context_data(**kwargs)
+        context['tags'] = self.object.tags.all()
+        return context
 
 class TagListView(ListView):
     model = Tag
@@ -28,5 +33,10 @@ class TagListView(ListView):
 
 class TagDetailView(DetailView):
     model = Tag
-    context_object_name = 'tag_detail'
-    template_name = 'tag_list.html'
+    context_object_name = 'tag'
+    template_name = 'tag_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(TagDetailView, self).get_context_data(**kwargs)
+        context['lessons'] = self.object.lessons.all()
+        return context

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h1>Lesson Plans</h1>
+  
+  <h2>{{ lesson.title }}</h2>
+  <p>Tags: 
+    {% for tag in tags %}
+      <div class="lesson-tag"> <a href="{% url 'tag_detail' tag.slug %}">{{ tag.name }}</a></div>
+    {% empty %}
+      <p>No tags.</p>
+    {% endfor %}
+  </p>
+
+{% endblock %}

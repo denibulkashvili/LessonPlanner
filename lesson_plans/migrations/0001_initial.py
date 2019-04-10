@@ -7,37 +7,59 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []
 
     operations = [
         migrations.CreateModel(
-            name='Tag',
+            name="Tag",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('name', models.CharField(max_length=20, verbose_name='tag name')),
-                ('slug', models.SlugField()),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                ("name", models.CharField(max_length=20, verbose_name="tag name")),
+                ("slug", models.SlugField()),
             ],
-            options={
-                'verbose_name': 'tag',
-                'verbose_name_plural': 'tags',
-            },
+            options={"verbose_name": "tag", "verbose_name_plural": "tags"},
         ),
         migrations.CreateModel(
-            name='Lesson',
+            name="Lesson",
             fields=[
-                ('id', models.AutoField(auto_created=True, primary_key=True, serialize=False, verbose_name='ID')),
-                ('title', models.CharField(max_length=200, verbose_name='lesson title')),
-                ('tags', models.ManyToManyField(related_name='lessons', related_query_name='lesson', to='lesson_plans.Tag')),
+                (
+                    "id",
+                    models.AutoField(
+                        auto_created=True,
+                        primary_key=True,
+                        serialize=False,
+                        verbose_name="ID",
+                    ),
+                ),
+                (
+                    "title",
+                    models.CharField(max_length=200, verbose_name="lesson title"),
+                ),
+                (
+                    "tags",
+                    models.ManyToManyField(
+                        related_name="lessons",
+                        related_query_name="lesson",
+                        to="lesson_plans.Tag",
+                    ),
+                ),
             ],
             options={
-                'verbose_name': 'lesson',
-                'verbose_name_plural': 'lessons',
-                'ordering': ['-title'],
+                "verbose_name": "lesson",
+                "verbose_name_plural": "lessons",
+                "ordering": ["-title"],
             },
         ),
         migrations.AddIndex(
-            model_name='lesson',
-            index=models.Index(fields=['title'], name='lesson_plan_title_546a44_idx'),
+            model_name="lesson",
+            index=models.Index(fields=["title"], name="lesson_plan_title_546a44_idx"),
         ),
     ]

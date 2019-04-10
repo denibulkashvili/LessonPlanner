@@ -1,10 +1,14 @@
 # packages in environment at D:\Python\Anaconda3\envs\lesson-planner:
 #
 # Name                    Version                   Build  Channel
+appdirs                   1.4.3                      py_1    conda-forge
 asn1crypto                0.24.0                py37_1003    conda-forge
+attrs                     19.1.0                     py_0    conda-forge
+black                     19.3b0                     py_0    conda-forge
 ca-certificates           2019.3.9             hecc5488_0    conda-forge
 certifi                   2019.3.9                 py37_0    conda-forge
 cffi                      1.12.2           py37hb32ad35_1    conda-forge
+click                     7.0                        py_0    conda-forge
 coverage                  4.5.3            py37hfa6e2cd_0    conda-forge
 cryptography              2.6.1            py37hb32ad35_0    conda-forge
 django                    2.2                      py37_0    conda-forge
@@ -22,6 +26,7 @@ setuptools                40.8.0                   py37_0    conda-forge
 six                       1.12.0                py37_1000    conda-forge
 sqlite                    3.26.0            hfa6e2cd_1001    conda-forge
 sqlparse                  0.3.0                      py_0    conda-forge
+toml                      0.10.0                     py_0    conda-forge
 urllib3                   1.24.1                py37_1000    conda-forge
 vc                        14                            0    conda-forge
 vs2015_runtime            14.0.25420                    0    conda-forge

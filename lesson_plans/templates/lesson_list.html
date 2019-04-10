@@ -5,7 +5,6 @@
   
     {% for lesson in lesson_list %}
         <h2><a href="{% url 'lesson_detail' lesson.id %}">{{ lesson.title }}</a></h2>
-        
     {% empty %}
         <p>No lessons yet.</p>
     {% endfor %}

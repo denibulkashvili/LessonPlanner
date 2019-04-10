@@ -11,12 +11,10 @@ class IndexView(TemplateView):
         context["lesson_count"] = Lesson.objects.all().count()
         return context
 
-
 class LessonListView(ListView):
     model = Lesson
     context_object_name = "lesson_list"
     template_name = "lesson_list.html"
-
 
 class LessonDetailView(DetailView):
     model = Lesson
@@ -28,12 +26,10 @@ class LessonDetailView(DetailView):
         context["tags"] = self.object.tags.all()
         return context
 
-
 class TagListView(ListView):
     model = Tag
     context_object_name = "tag_list"
     template_name = "tag_list.html"
-
 
 class TagDetailView(DetailView):
     model = Tag

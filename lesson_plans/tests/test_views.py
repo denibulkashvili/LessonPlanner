@@ -7,7 +7,6 @@ from lesson_plans.models import Lesson, Tag
 # Create your tests here.
 class IndexPageTests(TestCase):
     """Tests index page"""
-
     def setUp(self):
         self.lesson = Lesson.objects.create(title="Classroom Objects")
 
@@ -33,8 +32,6 @@ class IndexPageTests(TestCase):
         lesson_count = response.context["lesson_count"]
         self.assertEqual(lesson_count, 1)
 
-
-
 class LessonListPageTests(TestCase):
     """Test LessonList page"""
 
@@ -42,7 +39,6 @@ class LessonListPageTests(TestCase):
         response = self.client.get("/lessons/")
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "lesson_list.html")
-
 
 class LessonDetailPageTests(TestCase):
     """Test LessonDetail page"""
@@ -55,7 +51,6 @@ class LessonDetailPageTests(TestCase):
         response = self.client.get(f"/lesson/{self.lesson.id}/")
         self.assertEqual(response.status_code, 200)
 
-
 class TagListPageTests(TestCase):
     """Test TagList page"""
 
@@ -66,7 +61,6 @@ class TagListPageTests(TestCase):
         response = self.client.get("/tags/")
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "tag_list.html")
-
 
 class TagDetailPageTests(TestCase):
     """Test TagDetail page"""

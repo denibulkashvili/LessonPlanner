@@ -1,39 +1,27 @@
-# packages in environment at D:\Python\Anaconda3\envs\lesson-planner:
-#
-# Name                    Version                   Build  Channel
-appdirs                   1.4.3                      py_1    conda-forge
-asn1crypto                0.24.0                py37_1003    conda-forge
-attrs                     19.1.0                     py_0    conda-forge
-black                     19.3b0                     py_0    conda-forge
-ca-certificates           2019.3.9             hecc5488_0    conda-forge
-certifi                   2019.3.9                 py37_0    conda-forge
-cffi                      1.12.2           py37hb32ad35_1    conda-forge
-click                     7.0                        py_0    conda-forge
-coverage                  4.5.3            py37hfa6e2cd_0    conda-forge
-cryptography              2.6.1            py37hb32ad35_0    conda-forge
-dj-database-url           0.5.0                     <pip>
-django                    2.2                      py37_0    conda-forge
-django-environ            0.4.5                      py_1    conda-forge
-django-heroku             0.3.1                     <pip>
-idna                      2.8                   py37_1000    conda-forge
-openssl                   1.1.1b               hfa6e2cd_2    conda-forge
-pip                       19.0.3                   py37_0    conda-forge
-psycopg2                  2.8.1                     <pip>
-pycparser                 2.19                     py37_1    conda-forge
-pyopenssl                 19.0.0                   py37_0    conda-forge
-pysocks                   1.6.8                 py37_1002    conda-forge
-python                    3.7.3                hb12ca83_0    conda-forge
-pytz                      2018.9                     py_0    conda-forge
-selenium                  3.141.0         py37hfa6e2cd_1000    conda-forge
-setuptools                40.8.0                   py37_0    conda-forge
-six                       1.12.0                py37_1000    conda-forge
-sqlite                    3.26.0            hfa6e2cd_1001    conda-forge
-sqlparse                  0.3.0                      py_0    conda-forge
-toml                      0.10.0                     py_0    conda-forge
-urllib3                   1.24.1                py37_1000    conda-forge
-vc                        14                            0    conda-forge
-vs2015_runtime            14.0.25420                    0    conda-forge
-wheel                     0.33.1                   py37_0    conda-forge
-whitenoise                4.1.2                     <pip>
-win_inet_pton             1.1.0                    py37_0    conda-forge
-wincertstore              0.2                   py37_1002    conda-forge
+appdirs==1.4.3
+asn1crypto==0.24.0
+attrs==19.1.0
+black==19.3b0
+certifi==2019.3.9
+cffi==1.12.2
+Click==7.0
+coverage==4.5.3
+cryptography==2.6.1
+dj-database-url==0.5.0
+Django==2.2
+django-environ==0.4.5
+django-heroku==0.3.1
+idna==2.8
+psycopg2==2.8.1
+pycparser==2.19
+pyOpenSSL==19.0.0
+PySocks==1.6.8
+pytz==2018.9
+selenium==3.141.0
+six==1.12.0
+sqlparse==0.3.0
+toml==0.10.0
+urllib3==1.24.1
+whitenoise==4.1.2
+win-inet-pton==1.1.0
+wincertstore==0.2

@@ -14,5 +14,5 @@ urlpatterns = [
     path("lesson/<pk>/", LessonDetailView.as_view(), name="lesson_detail"),
     path("tags/", TagListView.as_view(), name="tag_list"),
     path("tag/<slug:slug>/", TagDetailView.as_view(), name="tag_detail"),
-    path("about/", AboutView.as_view(), name="about")
+    path("about/", AboutView.as_view(), name="about"),
 ]

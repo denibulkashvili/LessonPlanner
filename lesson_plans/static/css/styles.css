@@ -1,5 +1,44 @@
 body {
+  margin: 0;
+  padding: 0;
   background: rgb(228, 228, 228);
+}
+
+.header-img {
+  background: url("/static/images/background.jpg");
+  background-position: center;
+  background-size: cover;
+  min-height: 50vh;
+  width: 100vw;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  background:#f1f1f1be;
+  display: inline-block;
+  width: 100%;
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+nav ul li {
+  text-align: center;
+  display: inline-block;
+  width: 100px;
+  cursor: pointer;
+}
+nav ul li a {
+  display: block;
+  text-decoration: none;
+  padding: 10px;
+  color: rgba(46, 46, 46, 0.89);
+}
+nav ul li a:hover {
+  background: rgba(85, 85, 85, 0.822);
+  color: #f1f1f1ee;
 }
 
 .lesson-tag {

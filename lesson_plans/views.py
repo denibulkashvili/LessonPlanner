@@ -11,6 +11,9 @@ class IndexView(TemplateView):
         context["lesson_count"] = Lesson.objects.all().count()
         return context
 
+class AboutView(TemplateView):
+    template_name = "about.html"
+
 class LessonListView(ListView):
     model = Lesson
     context_object_name = "lesson_list"

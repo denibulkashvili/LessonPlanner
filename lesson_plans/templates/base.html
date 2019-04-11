@@ -9,13 +9,21 @@
   <link rel="stylesheet" href="{% static 'css/styles.css' %}">
 </head>
 <body>
-  <div class="sidebar">
-    {% block sidebar %}
+  <header>
+    <nav>
       <ul>
         <li><a href="{% url 'index' %}">Home</a></li>
         <li><a href="{% url 'lesson_list' %}">Lessons</a></li>
         <li><a href="{% url 'tag_list' %}">Tags</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
       </ul>
+    </nav>
+  </header>
+  
+  
+  <div class="sidebar">
+    {% block sidebar %}
+      
     {% endblock %}
   </div>
   <div class="container">

@@ -1,6 +1,9 @@
 {% extends "base.html" %}
 
+{% block header %}
+  <h1 class="header-title">Lesson Planner</h1>
+{% endblock %}
+
 {% block content %}
-  <h1>Lesson Planner</h1>
   <p>Total lesson plans:</strong> {{ lesson_count }}</p>
 {% endblock %}

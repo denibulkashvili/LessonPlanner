@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 
-{% block header-img %}{% endblock %}
+{% block header %}
+  <h1 class="header-title">Lesson: {{ lesson.title }} </h1>
+{% endblock %}
+
 
 {% block content %}
-  <h1>Lesson Plans</h1>
   
   <h2>{{ lesson.title }}</h2>
   <p>Tags: 

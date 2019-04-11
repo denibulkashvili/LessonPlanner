@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 
-{% block header-img %}{% endblock %}
+{% block header %}
+  <h1 class="header-title">All Lessons</h1>
+{% endblock %}
 
 {% block content %}
-    <h1>Lesson Plans</h1>
   
     {% for lesson in lesson_list %}
         <h2><a href="{% url 'lesson_detail' lesson.id %}">{{ lesson.title }}</a></h2>

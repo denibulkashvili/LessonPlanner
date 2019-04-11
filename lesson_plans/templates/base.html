@@ -10,9 +10,10 @@
 </head>
 <body>
   <header>
-    {% block header-img %}
-      <div class="header-img"></div>
-    {% endblock %}
+    <div class="header-img">
+        {% block header %}
+        {% endblock %}
+    </div>
     <nav>
       <ul>
         <li><a href="{% url 'index' %}">Home</a></li>

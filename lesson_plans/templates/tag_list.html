@@ -1,9 +1,10 @@
 {% extends "base.html" %}
 
-{% block header-img %}{% endblock %}
+{% block header %}
+  <h1 class="header-title">Lesson Tags</h1>
+{% endblock %}
 
 {% block content %}
-  <h1>Lesson Tags</h1>
   
   <ul>
     {% for tag in tag_list %}

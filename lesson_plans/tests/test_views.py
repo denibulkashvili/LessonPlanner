@@ -47,7 +47,6 @@ class LessonDetailPageTests(TestCase):
         self.lesson = Lesson.objects.create(title="Countries Lesson")
 
     def test_lesson_detail_page_template(self):
-        # less = Lesson.objects.create(title="Test Lesson")
         response = self.client.get(f"/lesson/{self.lesson.id}/")
         self.assertEqual(response.status_code, 200)
 

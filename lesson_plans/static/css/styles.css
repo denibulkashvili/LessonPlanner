@@ -1,10 +1,20 @@
+:root {
+  --primary: #fff3e0;
+  --primary-light: #ffffff;
+  --primary-dark: #ccc5af; 
+  --secondary: #e64a19;
+  --secondary-light: #ff7d47;
+  --secondary-dark: #ac0800;
+}
+
 body {
   margin: 0;
   padding: 0;
   font-size: 20px;
-  background: rgb(228, 228, 228);
+  background: var(--primary);
 }
 
+/* HEADER */
 .header-img {
   background: url("/static/images/background.jpg");
   background-position: center;
@@ -26,6 +36,7 @@ h1 {
   text-shadow: 4px 3px 0 #7A7A7A;
 }
 
+/* NAVIGATION */
 nav {
   position: fixed;
   top: 0;
@@ -41,7 +52,7 @@ nav ul {
 nav ul li {
   text-align: center;
   display: inline-block;
-  width: 100px;
+  width: 150px;
   cursor: pointer;
 }
 nav ul li a {
@@ -55,14 +66,57 @@ nav ul li a:hover {
   color: #f1f1f1ee;
 }
 
+/* CONTAINER */
 .container {
   /* border: 1px solid black; */
   width: 60%;
   margin: 0 auto;
 }
 
-.lesson-tag {
-  display: inline;
-  border: 1px solid black;
+/* LESSON PLAN META */
+.lesson-title {
+  text-align: center;
+}
+ul.lesson-tags {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+}
+li.lesson-tag-label{
+  display: inline-block;
+  list-style: none;
+  margin: 5px;
+  padding: 7px;
+}
+li.lesson-tag {
+  background: var(--primary-dark);
+  border-radius: 15px;
+}
+.lesson-tag a {
+  text-decoration: none;
+  color: var(--primary-light);
+}
+.lesson-tag:hover {
+  transform: scale(1.1);
+}
+
+/* LESSON PLAN DETAILS FIELDS */
+.lesson-detail-fields {
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-gap: 10px;
+}
+.lesson-content span {
   margin: 10px;
+}
+
+.lesson-video-iframe {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+/* OTHER PAGES */
+.online-games {
+  margin: 30px;
 }

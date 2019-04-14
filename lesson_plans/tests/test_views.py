@@ -74,26 +74,26 @@ class LessonDetailPageTests(TestCase):
 
     def test_lesson_detail_page_displays_lesson_number(self):
         response = self.client.get("/lesson/1/")
-        self.assertContains(response, "Lesson number: 1")
+        self.assertContains(response, "<b>Lesson number</b>: 1")
 
     def test_lesson_detail_page_displays_lesson_duration(self):
         response = self.client.get("/lesson/1/")
-        self.assertContains(response, "Lesson duration: 90 minutes.")
+        self.assertContains(response, "<b>Lesson duration</b>: 90 minutes.")
 
     def test_lesson_detail_page_displays_lesson_resources(self):
         response = self.client.get("/lesson/1/")
-        self.assertContains(response, "Resources: Books, map, flashcards.")
+        self.assertContains(response, "<b>Resources</b>: Books, map, flashcards.")
 
     def test_lesson_detail_page_displays_lesson_objectives(self):
         response = self.client.get("/lesson/1/")
-        self.assertContains(response, "Objectives: Learn names of the countries.")
+        self.assertContains(response, "<b>Objectives</b>: Learn names of the countries.")
 
     def test_lesson_detail_page_displays_lesson_content(self):
         response = self.client.get("/lesson/1/")
-        self.assertContains(response, "Content: Learn the vocabulary.")
+        self.assertContains(response, "<p><b>Content</b>:</p> Learn the vocabulary.")
 
     def test_lesson_detail_page_displays_video_link(self):
-        iframe_scr_tag = 'src="https://www.youtube.com/embed/4gHbPDdGCFs">'
+        iframe_scr_tag = 'src="https://www.youtube.com/embed/4gHbPDdGCFs"'
         response = self.client.get("/lesson/1/")
         self.assertContains(response, iframe_scr_tag)
 

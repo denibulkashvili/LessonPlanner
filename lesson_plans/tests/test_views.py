@@ -7,6 +7,7 @@ from lesson_plans.models import Lesson, Tag
 # Create your tests here.
 class IndexPageTests(TestCase):
     """Tests index page"""
+
     def setUp(self):
         self.lesson = Lesson.objects.create(title="Classroom Objects")
 
@@ -32,6 +33,7 @@ class IndexPageTests(TestCase):
         lesson_count = response.context["lesson_count"]
         self.assertEqual(lesson_count, 1)
 
+
 class LessonListPageTests(TestCase):
     """Test LessonList page"""
 
@@ -40,23 +42,23 @@ class LessonListPageTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "lesson_list.html")
 
+
 class LessonDetailPageTests(TestCase):
     """Test LessonDetail page"""
 
     def setUp(self):
         self.lesson = Lesson.objects.create(
-            title="Countries Lesson",  
-            book="Get Smart 5", 
-            lesson_number=1, 
+            title="Countries Lesson",
+            book="Get Smart 5",
+            lesson_number=1,
             lesson_duration=90,
-            lesson_objectives="Learn names of the countries.", 
-            resources="Books, map, flashcards.", 
-            content="Learn the vocabulary. Sing the song about countries. Write the names of the ountries on the map.", 
-            video_link="https://www.youtube.com/watch?v=4gHbPDdGCFs"
+            lesson_objectives="Learn names of the countries.",
+            resources="Books, map, flashcards.",
+            content="Learn the vocabulary. Sing the song about countries. Write the names of the ountries on the map.",
+            video_link="https://www.youtube.com/watch?v=4gHbPDdGCFs",
         )
         self.tag = Tag.objects.create(name="countries")
         self.lesson.tags.add(self.tag)
-        
 
     def test_lesson_detail_page_template(self):
         response = self.client.get(f"/lesson/{self.lesson.id}/")
@@ -81,11 +83,11 @@ class LessonDetailPageTests(TestCase):
     def test_lesson_detail_page_displays_lesson_resources(self):
         response = self.client.get("/lesson/1/")
         self.assertContains(response, "Resources: Books, map, flashcards.")
-    
+
     def test_lesson_detail_page_displays_lesson_objectives(self):
         response = self.client.get("/lesson/1/")
         self.assertContains(response, "Objectives: Learn names of the countries.")
-    
+
     def test_lesson_detail_page_displays_lesson_content(self):
         response = self.client.get("/lesson/1/")
         self.assertContains(response, "Content: Learn the vocabulary.")
@@ -95,7 +97,6 @@ class LessonDetailPageTests(TestCase):
         response = self.client.get("/lesson/1/")
         self.assertContains(response, iframe_scr_tag)
 
-    
 
 class TagListPageTests(TestCase):
     """Test TagList page"""
@@ -108,8 +109,10 @@ class TagListPageTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, "tag_list.html")
 
+
 class TagDetailPageTests(TestCase):
     """Test TagDetail page"""
+
     def setUp(self):
         self.tag = Tag.objects.create(name="cat")
 

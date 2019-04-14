@@ -9,7 +9,7 @@ class LessonTestCase(TestCase):
             "setUpTestData: Run once to set up non-modified data for all class methods."
         )
         Lesson.objects.create(title="Food lesson")
-    
+
     def setUp(self):
         self.lesson = Lesson.objects.get(id=1)
 
@@ -34,11 +34,11 @@ class LessonTestCase(TestCase):
         max_length = self.lesson._meta.get_field("book").max_length
         self.assertEquals(book_field_label, "book")
         self.assertEquals(max_length, 200)
-    
+
     def test_lesson_number_field(self):
         field_label = self.lesson._meta.get_field("lesson_number").verbose_name
         self.assertEquals(field_label, "lesson number")
-    
+
     def test_lesson_duration_field(self):
         field_label = self.lesson._meta.get_field("lesson_duration").verbose_name
         self.assertEquals(field_label, "lesson duration (in minutes)")
@@ -48,7 +48,7 @@ class LessonTestCase(TestCase):
         max_length = self.lesson._meta.get_field("lesson_objectives").max_length
         self.assertEquals(field_label, "lesson objectives")
         self.assertEquals(max_length, 500)
-    
+
     def test_resources_field(self):
         field_label = self.lesson._meta.get_field("resources").verbose_name
         max_length = self.lesson._meta.get_field("resources").max_length
@@ -66,7 +66,6 @@ class LessonTestCase(TestCase):
         self.assertEquals(max_length, 200)
 
 
-
 class TagTestCase(TestCase):
     @classmethod
     def setUpTestData(cls):
@@ -74,10 +73,10 @@ class TagTestCase(TestCase):
             "setUpTestData: Run once to set up non-modified data for all class methods."
         )
         Tag.objects.create(name="food")
-    
+
     def setUp(self):
         self.tag = Tag.objects.get(id=1)
-    
+
     def test_name_label(self):
         field_label = self.tag._meta.get_field("name").verbose_name
         self.assertEquals(field_label, "tag name")

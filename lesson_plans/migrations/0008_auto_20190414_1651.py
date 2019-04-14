@@ -5,19 +5,19 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('lesson_plans', '0007_auto_20190414_1651'),
-    ]
+    dependencies = [("lesson_plans", "0007_auto_20190414_1651")]
 
     operations = [
         migrations.AddField(
-            model_name='lesson',
-            name='lesson_number',
-            field=models.IntegerField(default=0, max_length=10, verbose_name='lesson number'),
+            model_name="lesson",
+            name="lesson_number",
+            field=models.IntegerField(
+                default=0, max_length=10, verbose_name="lesson number"
+            ),
         ),
         migrations.AlterField(
-            model_name='lesson',
-            name='book',
-            field=models.CharField(default='', max_length=200, verbose_name='book'),
+            model_name="lesson",
+            name="book",
+            field=models.CharField(default="", max_length=200, verbose_name="book"),
         ),
     ]

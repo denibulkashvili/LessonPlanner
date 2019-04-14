@@ -13,8 +13,12 @@ class Lesson(models.Model):
     )
     book = models.CharField(max_length=200, verbose_name="book", default="")
     lesson_number = models.IntegerField(verbose_name="lesson number", default=0)
-    lesson_duration = models.IntegerField(verbose_name="lesson duration (in minutes)", default=0)
-    lesson_objectives = models.TextField(max_length=500, verbose_name="lesson objectives", default="")
+    lesson_duration = models.IntegerField(
+        verbose_name="lesson duration (in minutes)", default=0
+    )
+    lesson_objectives = models.TextField(
+        max_length=500, verbose_name="lesson objectives", default=""
+    )
     resources = models.TextField(max_length=500, verbose_name="resources", default="")
     content = models.TextField(max_length=500, verbose_name="content", default="")
     video_link = models.CharField(max_length=200, verbose_name="video link", default="")
@@ -22,8 +26,8 @@ class Lesson(models.Model):
     def get_embed_video_url(self):
         video_link_parsed = parse.urlparse(self.video_link)
         qsl = parse.parse_qs(video_link_parsed.query)
-        video_id = qsl['v'][0]
-        self.video_link = f'https://www.youtube.com/embed/{video_id}'
+        video_id = qsl["v"][0]
+        self.video_link = f"https://www.youtube.com/embed/{video_id}"
 
     def save(self, *args, **kwargs):
         if self.video_link:

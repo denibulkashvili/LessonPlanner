@@ -5,14 +5,14 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('lesson_plans', '0010_lesson_lesson_duration'),
-    ]
+    dependencies = [("lesson_plans", "0010_lesson_lesson_duration")]
 
     operations = [
         migrations.AddField(
-            model_name='lesson',
-            name='lesson_objectives',
-            field=models.TextField(default='', max_length=500, verbose_name='lesson objectives'),
-        ),
+            model_name="lesson",
+            name="lesson_objectives",
+            field=models.TextField(
+                default="", max_length=500, verbose_name="lesson objectives"
+            ),
+        )
     ]

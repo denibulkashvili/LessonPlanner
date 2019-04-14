@@ -5,14 +5,12 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('lesson_plans', '0006_remove_lesson_lesson_number'),
-    ]
+    dependencies = [("lesson_plans", "0006_remove_lesson_lesson_number")]
 
     operations = [
         migrations.AlterField(
-            model_name='lesson',
-            name='book',
-            field=models.CharField(default=0, max_length=200, verbose_name='book'),
-        ),
+            model_name="lesson",
+            name="book",
+            field=models.CharField(default=0, max_length=200, verbose_name="book"),
+        )
     ]

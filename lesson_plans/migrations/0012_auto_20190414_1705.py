@@ -5,24 +5,26 @@ from django.db import migrations, models
 
 class Migration(migrations.Migration):
 
-    dependencies = [
-        ('lesson_plans', '0011_lesson_lesson_objectives'),
-    ]
+    dependencies = [("lesson_plans", "0011_lesson_lesson_objectives")]
 
     operations = [
         migrations.AddField(
-            model_name='lesson',
-            name='content',
-            field=models.TextField(default='', max_length=500, verbose_name='content'),
+            model_name="lesson",
+            name="content",
+            field=models.TextField(default="", max_length=500, verbose_name="content"),
         ),
         migrations.AddField(
-            model_name='lesson',
-            name='resources',
-            field=models.TextField(default='', max_length=500, verbose_name='resources'),
+            model_name="lesson",
+            name="resources",
+            field=models.TextField(
+                default="", max_length=500, verbose_name="resources"
+            ),
         ),
         migrations.AddField(
-            model_name='lesson',
-            name='video_link',
-            field=models.CharField(default='', max_length=200, verbose_name='video link'),
+            model_name="lesson",
+            name="video_link",
+            field=models.CharField(
+                default="", max_length=200, verbose_name="video link"
+            ),
         ),
     ]

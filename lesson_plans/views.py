@@ -16,6 +16,10 @@ class AboutView(TemplateView):
     template_name = "about.html"
 
 
+class OnlineGamesView(TemplateView):
+    template_name = "online_games.html"
+
+
 class LessonListView(ListView):
     model = Lesson
     context_object_name = "lesson_list"

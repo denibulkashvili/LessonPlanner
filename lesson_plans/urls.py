@@ -6,6 +6,7 @@ from lesson_plans.views import (
     TagListView,
     IndexView,
     AboutView,
+    OnlineGamesView,
 )
 
 urlpatterns = [
@@ -15,4 +16,5 @@ urlpatterns = [
     path("tags/", TagListView.as_view(), name="tag_list"),
     path("tag/<slug:slug>/", TagDetailView.as_view(), name="tag_detail"),
     path("about/", AboutView.as_view(), name="about"),
+    path("online-games/", OnlineGamesView.as_view(), name="online_games"),
 ]

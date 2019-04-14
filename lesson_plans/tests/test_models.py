@@ -10,10 +10,6 @@ class LessonTestCase(TestCase):
         )
         Lesson.objects.create(title="Food lesson")
 
-    # def setUp(self):
-    #     print("setUp: Run once for every test method to setup clean data.")
-    #     pass
-
     def test_title_label(self):
         lesson = Lesson.objects.get(id=1)
         field_label = lesson._meta.get_field("title").verbose_name
@@ -33,6 +29,50 @@ class LessonTestCase(TestCase):
         lesson = Lesson.objects.get(id=1)
         # This will also fail if the urlconf is not defined.
         self.assertEquals(lesson.get_absolute_url(), "/lesson/1/")
+
+    def test_book_field(self):
+        lesson = Lesson.objects.get(id=1)
+        book_field_label = lesson._meta.get_field("book").verbose_name
+        max_length = lesson._meta.get_field("book").max_length
+        self.assertEquals(book_field_label, "book")
+        self.assertEquals(max_length, 200)
+    
+    def test_lesson_number_field(self):
+        lesson = Lesson.objects.get(id=1)
+        field_label = lesson._meta.get_field("lesson_number").verbose_name
+        self.assertEquals(field_label, "lesson number")
+    
+    def test_lesson_duration_field(self):
+        lesson = Lesson.objects.get(id=1)
+        field_label = lesson._meta.get_field("lesson_duration").verbose_name
+        self.assertEquals(field_label, "lesson duration (in minutes)")
+
+    def test_lesson_objectives_field(self):
+        lesson = Lesson.objects.get(id=1)
+        field_label = lesson._meta.get_field("lesson_objectives").verbose_name
+        max_length = lesson._meta.get_field("lesson_objectives").max_length
+        self.assertEquals(field_label, "lesson objectives")
+        self.assertEquals(max_length, 500)
+    
+    def test_resources_field(self):
+        lesson = Lesson.objects.get(id=1)
+        field_label = lesson._meta.get_field("resources").verbose_name
+        max_length = lesson._meta.get_field("resources").max_length
+        self.assertEquals(field_label, "resources")
+        self.assertEquals(max_length, 500)
+
+    def test_content_filed(self):
+        lesson = Lesson.objects.get(id=1)
+        field_label = lesson._meta.get_field("content").verbose_name
+        self.assertEquals(field_label, "content")
+
+    def test_video_link_field(self):
+        lesson = Lesson.objects.get(id=1)
+        field_label = lesson._meta.get_field("video_link").verbose_name
+        max_length = lesson._meta.get_field("video_link").max_length
+        self.assertEquals(field_label, "video link")
+        self.assertEquals(max_length, 200)
+
 
 
 class TagTestCase(TestCase):

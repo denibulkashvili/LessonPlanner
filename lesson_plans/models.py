@@ -10,6 +10,13 @@ class Lesson(models.Model):
     tags = models.ManyToManyField(
         "Tag", related_name="lessons", related_query_name="lesson"
     )
+    book = models.CharField(max_length=200, verbose_name="book", default="")
+    lesson_number = models.IntegerField(verbose_name="lesson number", default=0)
+    lesson_duration = models.IntegerField(verbose_name="lesson duration (in minutes)", default=0)
+    lesson_objectives = models.TextField(max_length=500, verbose_name="lesson objectives", default="")
+    resources = models.TextField(max_length=500, verbose_name="resources", default="")
+    content = models.TextField(max_length=500, verbose_name="content", default="")
+    video_link = models.CharField(max_length=200, verbose_name="video link", default="")
 
     class Meta:
         indexes = [models.Index(fields=["title"])]

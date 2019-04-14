@@ -25,7 +25,7 @@ class IndexPageTests(TestCase):
 
     def test_index_page_contains_correct_html(self):
         response = self.client.get("/")
-        self.assertContains(response, "<h1>Lesson Planner</h1>")
+        self.assertContains(response, '<h1 class="header-title">Lesson Planner</h1>')
 
     def test_index_page_displays_correct_lesson_count(self):
         response = self.client.get("/")

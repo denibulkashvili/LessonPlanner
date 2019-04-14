@@ -10,12 +10,40 @@
 {% block content %}
   
   <h2>{{ lesson.title }}</h2>
-  <p>Tags: 
+  <div class="lesson-tags">Tags:
+    <ul> 
     {% for tag in tags %}
-      <div class="lesson-tag"> <a href="{% url 'tag_detail' tag.slug %}">{{ tag.name }}</a></div>
+      <li class="lesson-tag"> <a href="{% url 'tag_detail' tag.slug %}">{{ tag.name }}</a></li>
     {% empty %}
-      <p>No tags.</p>
+      No tags.
     {% endfor %}
-  </p>
-
+    </ul>
+  </div>
+  <div class="book">{{ lesson.book }}</div>
+  <div class="lesson-number">
+    Lesson number: {{ lesson.lesson_number }}
+  </div>
+  <div class="lesson-duration">
+    Lesson duration: {{ lesson.lesson_duration }} minutes.
+  </div>
+  <div class="lesson-resources">
+      Resources: {{ lesson.resources }}
+  </div>
+  <div class="lesson-objectives">
+      Objectives: {{ lesson.lesson_objectives }}
+  </div>
+  <div class="lesson-content">
+      Content: {{ lesson.content }}
+  </div>
+  <div class="lesson-video">
+    Video: 
+    {% if lesson.video_link %}
+      <iframe width="420" 
+              height="315"
+              src="{{ lesson.video_link }}">
+      </iframe>
+    {% else %}
+      No video for this lesson.
+    {% endif %}
+  </div>
 {% endblock %}

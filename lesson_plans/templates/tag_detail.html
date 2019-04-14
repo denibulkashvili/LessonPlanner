@@ -1,5 +1,7 @@
 {% extends "base.html" %}
 
+{% block title %}- {{ tag.name }}{% endblock %}
+
 {% block header %}
   <h1 class="header-title">Tag: {{ tag.name }}</h1>
 {% endblock %}

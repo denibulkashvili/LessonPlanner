@@ -23,7 +23,6 @@ body {
 }
 h1 {
   color: #FFFFFF;
-  /* background: #b8b8b8; */
   text-shadow: 4px 3px 0 #7A7A7A;
 }
 
@@ -54,6 +53,12 @@ nav ul li a {
 nav ul li a:hover {
   background: rgba(85, 85, 85, 0.822);
   color: #f1f1f1ee;
+}
+
+.container {
+  /* border: 1px solid black; */
+  width: 60%;
+  margin: 0 auto;
 }
 
 .lesson-tag {
